@@ -1,0 +1,35 @@
+
+<button class="btn btn-success mt-2 mb-4" (click)="Add()">
+  {{'Dashboard.Add'|translate}}
+</button>
+
+<table class="table ">
+
+<thead>
+  <th>{{'Dashboard.PatientName'|translate}}</th>
+  <th>{{'Dashboard.PatientEmail'|translate}}</th>
+  <th>{{'Dashboard.addAppointment'|translate}}</th>
+  <th>{{'Dashboard.Delete'|translate}}</th>
+  <th>{{'Dashboard.Edit'|translate}}</th>
+
+</thead>
+
+<tbody>
+
+  <tr *ngFor="let patient of Patients">
+    <td>{{patient.name}}</td>
+    <td>{{patient.email}}</td>
+    <td>
+      <button class="btn btn-success" (click)="Addappointment(patient.id)">{{'Dashboard.addAppointment'|translate}}</button>
+    </td>
+    <td>
+      <button class="btn btn-danger" (click)="Delete(patient.id)">{{'Dashboard.Delete'|translate}}</button>
+    </td>
+    <td>
+      <button class="btn btn-primary" (click)="Edit(patient.id)">{{'Dashboard.Edit'|translate}}</button>
+    </td>
+  </tr>
+
+</tbody>
+
+</table>

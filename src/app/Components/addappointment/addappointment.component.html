@@ -1,0 +1,15 @@
+
+<div class="col-5 ms-5">
+  <form action=""  [formGroup]="date" >
+<label class="form-label" for="appointment">{{'Appointment.Date'|translate}}</label>
+<input class="form-control " type="date" name="appointment"
+formControlName="appointment"
+
+[ngModel]="today | date:'yyyy-MM-dd'"
+(ngModelChange)="today = $event">
+
+<button type="submit" [disabled]="date.invalid" (click)="addAppointment()" class="btn btn-primary mt-2">{{'Appointment.Add'|translate}}</button>
+
+</form>
+</div>
+
